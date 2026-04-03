@@ -1,5 +1,4 @@
-let humanScore = 0;
-let computerScore = 0;
+
 
 function getComputerChoice() {
  let random =  Math.floor(Math.random ()*3) + 1
@@ -14,21 +13,83 @@ function getComputerChoice() {
  }
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 function getHumanChoice(){
     let choice = prompt("Pass in your choice").toLowerCase()
 
     if (choice == "rock") {
-        return "Rock"
+        return "rock"
     }
     if (choice == "paper") {
-        return "Paper"
+        return "paper"
     }
     if (choice =="scissors" ) {
-        return "Scissors"
+        return "scissors"
     }
 }
 
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
 
+
+
+function playGame() {
+    let humanScore = 0;
+let computerScore = 0;
+
+function playRound (humanChoice,computerChoice) {
+ if(humanChoice === "rock" && computerChoice ==="scissors"){
+    console.log("You win rock beat scissors");
+    humanScore++
+ }
+ else if (humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("You win scissors beat paper");
+    humanScore++
+ }
+ else if (humanChoice === "paper" && computerChoice === "rock"){
+    console.log("You win paper beats rock");
+    humanScore++
+ }
+ else if(computerChoice === "rock" && humanChoice === "scissors") {
+    console.log("You lose! Rock beats Scissors");
+    computerScore++
+ }
+else if(computerChoice === "scissors" && humanChoice === "paper") {
+    console.log("You lose! Scissors beats Paper");
+    computerScore++
+}
+else if (computerChoice === "paper" && humanChoice === "rock"){
+    console.log("You lose! Paper beats Rock");
+    computerScore++
+}
+else{
+    console.log("its a tie");
+}
+}
+
+
+    // const humanSelection = getHumanChoice();
+    // const computerSelection = getComputerChoice ();
+
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    
+    
+   
+
+
+if (humanScore > computerScore) {
+    console.log(`You win the game! ${humanScore} - ${computerScore}`);
+}
+else if (computerScore > humanScore) {
+    console.log(`Computer wins the game! ${computerScore} - ${humanScore}`);
+}
+else {
+    console.log(`It's a draw ${humanScore} - ${computerScore}`);
+}
+}
+
+playGame()
