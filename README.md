@@ -18,4 +18,4 @@ functions, scope, and conditionals.
 ## Concepts Practiced
 - Functions and scope
 - Conditionals
-- Git and GitHub workflowSonnet 4.6
+- Git and GitHub workflow
